@@ -17,21 +17,13 @@ bun install
 ```
 
 
-2. Fill required secrets in `.env`:
-- `SUPABASE_URL`
-- `SUPABASE_ANON_KEY`
-- `SUPABASE_SERVICE_KEY`
-- `DATABASE_URL`
-- `JWT_SECRET`
-- `SESSION_KEY`
-
-3. Start Redis (if local):
+2. Start Redis (if local):
 
 ```bash
 redis-server
 ```
 
-4. Apply database schema:
+3. Apply database schema:
 
 ```bash
 bun run db:push

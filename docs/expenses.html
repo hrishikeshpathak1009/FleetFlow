@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FleetFlow | Fuel & Expenses</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body data-page="expenses">
+    <main class="shell">
+      <aside class="nav"><div class="brand"><small>Page 6</small><strong>Fuel & Costs</strong></div><nav class="menu"><a href="./dashboard.html">Dashboard</a><a href="./vehicles.html">Vehicle Registry</a><a href="./dispatch.html">Trip Dispatch</a><a href="./maintenance.html">Maintenance</a><a class="active" href="./expenses.html">Fuel & Expenses</a><a href="./drivers.html">Driver Safety</a><a href="./analytics.html">Analytics</a><a href="./reports.html">Reports</a></nav><div class="nav-footer"><button class="btn btn-muted js-logout">Logout</button></div></aside>
+      <section class="content">
+        <section class="panel">
+          <h3>Log Fuel Expense</h3>
+          <form id="fuelForm" class="grid-3">
+            <label>Trip ID<input id="fTripId" required placeholder="trp-001" /></label>
+            <label>Liters<input id="fLiters" type="number" min="0.1" step="0.1" required /></label>
+            <label>Cost<input id="fCost" type="number" min="0" step="0.01" required /></label>
+            <div class="row"><button class="btn" type="submit">Record Fuel</button><span class="pill">Total Expense: <strong id="expenseTotal">$0.00</strong></span></div>
+          </form>
+        </section>
+        <section class="panel"><h3>Expense Ledger</h3><div id="expensesTable" class="table-wrap"></div></section>
+        <p id="expensesMsg" class="msg"></p>
+      </section>
+    </main>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FleetFlow | Maintenance Logs</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body data-page="maintenance">
+    <main class="shell">
+      <aside class="nav"><div class="brand"><small>Page 5</small><strong>Maintenance</strong></div><nav class="menu"><a href="./dashboard.html">Dashboard</a><a href="./vehicles.html">Vehicle Registry</a><a href="./dispatch.html">Trip Dispatch</a><a class="active" href="./maintenance.html">Maintenance</a><a href="./expenses.html">Fuel & Expenses</a><a href="./drivers.html">Driver Safety</a><a href="./analytics.html">Analytics</a><a href="./reports.html">Reports</a></nav><div class="nav-footer"><button class="btn btn-muted js-logout">Logout</button></div></aside>
+      <section class="content">
+        <section class="grid-2">
+          <article class="panel">
+            <h3>Create Maintenance Log</h3>
+            <form id="maintForm" class="grid-2">
+              <label>Vehicle ID<input id="mVehicleId" required placeholder="veh-001" /></label>
+              <label>Cost<input id="mCost" type="number" min="0" value="0" /></label>
+              <label style="grid-column:1/-1;">Note<textarea id="mNote" required placeholder="Oil change and brake inspection"></textarea></label>
+              <button class="btn" style="grid-column:1/-1;" type="submit">Log Maintenance</button>
+            </form>
+          </article>
+          <article class="panel">
+            <h3>Complete Maintenance</h3>
+            <form id="completeForm" class="grid-2">
+              <label>Vehicle ID<input id="cVehicleId" required placeholder="veh-001" /></label>
+              <label>Maintenance Log ID<input id="cLogId" required placeholder="mnt-..." /></label>
+              <button class="btn btn-alert" style="grid-column:1/-1;" type="submit">Close Maintenance</button>
+            </form>
+          </article>
+        </section>
+        <section class="panel"><h3>Vehicles In Shop</h3><div id="inShopTable" class="table-wrap"></div></section>
+        <p id="maintenanceMsg" class="msg"></p>
+      </section>
+    </main>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FleetFlow | Driver Safety</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body data-page="drivers">
+    <main class="shell">
+      <aside class="nav"><div class="brand"><small>Page 7</small><strong>Driver Profiles</strong></div><nav class="menu"><a href="./dashboard.html">Dashboard</a><a href="./vehicles.html">Vehicle Registry</a><a href="./dispatch.html">Trip Dispatch</a><a href="./maintenance.html">Maintenance</a><a href="./expenses.html">Fuel & Expenses</a><a class="active" href="./drivers.html">Driver Safety</a><a href="./analytics.html">Analytics</a><a href="./reports.html">Reports</a></nav><div class="nav-footer"><button class="btn btn-muted js-logout">Logout</button></div></aside>
+      <section class="content">
+        <section class="grid-2">
+          <article class="panel">
+            <h3>Update Driver Status</h3>
+            <form id="driverUpdateForm" class="grid-2">
+              <label>Driver ID<input id="uDriverId" required placeholder="drv-001" /></label>
+              <label>Status<select id="uStatus"><option>on_duty</option><option>off_duty</option><option>suspended</option></select></label>
+              <label>License Category<select id="uCategory"><option>multi</option><option>truck</option><option>van</option><option>bike</option></select></label>
+              <label>Safety Score<input id="uScore" type="number" min="0" max="100" value="90" /></label>
+              <label style="grid-column:1/-1;">License Expiry<input id="uExpiry" type="datetime-local" required /></label>
+              <button class="btn" style="grid-column:1/-1;" type="submit">Save Driver Profile</button>
+            </form>
+          </article>
+          <article class="panel">
+            <h3>Compliance Alerts</h3>
+            <p id="expiringList"></p>
+          </article>
+        </section>
+        <section class="panel"><h3>Driver Registry</h3><div id="driversTable" class="table-wrap"></div></section>
+        <p id="driversMsg" class="msg"></p>
+      </section>
+    </main>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

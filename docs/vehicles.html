@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FleetFlow | Vehicle Registry</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body data-page="vehicles">
+    <main class="shell">
+      <aside class="nav"><div class="brand"><small>Page 3</small><strong>Vehicle Registry</strong></div><nav class="menu"><a href="./dashboard.html">Dashboard</a><a class="active" href="./vehicles.html">Vehicle Registry</a><a href="./dispatch.html">Trip Dispatch</a><a href="./maintenance.html">Maintenance</a><a href="./expenses.html">Fuel & Expenses</a><a href="./drivers.html">Driver Safety</a><a href="./analytics.html">Analytics</a><a href="./reports.html">Reports</a></nav><div class="nav-footer"><button class="btn btn-muted js-logout">Logout</button></div></aside>
+      <section class="content">
+        <header class="topbar"><span class="pill">Asset Lifecycle Management</span></header>
+        <section class="panel">
+          <h3>Create Vehicle</h3>
+          <form id="vehicleForm" class="grid-3">
+            <label>Name<input id="name" required placeholder="Van" /></label>
+            <label>Model<input id="model" required placeholder="05" /></label>
+            <label>Plate<input id="plate" required placeholder="FF-2001" /></label>
+            <label>Type<select id="vehicleType"><option value="truck">truck</option><option value="van" selected>van</option><option value="bike">bike</option></select></label>
+            <label>Max Load Kg<input id="maxLoadKg" type="number" min="1" required value="500" /></label>
+            <label>Odometer Km<input id="odometerKm" type="number" min="0" required value="0" /></label>
+            <label>Region<input id="region" required placeholder="west" /></label>
+            <label>Acquisition Cost<input id="acquisitionCost" type="number" min="0" placeholder="45000" /></label>
+            <div class="row" style="align-items:end;"><button class="btn" type="submit">Create Asset</button></div>
+          </form>
+        </section>
+        <section class="panel"><h3>Fleet Assets</h3><div id="vehiclesTable" class="table-wrap"></div></section>
+        <p id="vehiclesMsg" class="msg"></p>
+      </section>
+    </main>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

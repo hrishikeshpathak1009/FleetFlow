@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FleetFlow | Command Center</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body data-page="dashboard">
+    <main class="shell">
+      <aside class="nav">
+        <div class="brand"><small>FleetFlow</small><strong>Command Center</strong></div>
+        <nav class="menu">
+          <a class="active" href="./dashboard.html">Dashboard</a>
+          <a href="./vehicles.html">Vehicle Registry</a>
+          <a href="./dispatch.html">Trip Dispatch</a>
+          <a href="./maintenance.html">Maintenance</a>
+          <a href="./expenses.html">Fuel & Expenses</a>
+          <a href="./drivers.html">Driver Safety</a>
+          <a href="./analytics.html">Analytics</a>
+          <a href="./reports.html">Reports</a>
+        </nav>
+        <div class="nav-footer"><button class="btn btn-muted js-logout">Logout</button></div>
+      </aside>
+      <section class="content">
+        <header class="topbar"><span>Signed in as <strong class="js-user-name"></strong> (<span class="js-user-role"></span>)</span><span class="pill">API: <span class="js-api-base"></span></span></header>
+        <section class="hero"><h1>Operational Command Center</h1><p>At-a-glance monitoring of active fleet, maintenance pressure, utilization, and cargo queue.</p></section>
+        <section id="kpiCards" class="grid-4"></section>
+        <section class="grid-2">
+          <article class="panel"><h3>Fleet Snapshot</h3><div id="liveFleetTable" class="table-wrap"></div></article>
+          <article class="panel"><h3>Recent Trip Queue</h3><div id="recentTripsTable" class="table-wrap"></div></article>
+        </section>
+        <p id="dashboardMsg" class="msg"></p>
+      </section>
+    </main>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FleetFlow | Trip Dispatch</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body data-page="dispatch">
+    <main class="shell">
+      <aside class="nav"><div class="brand"><small>Page 4</small><strong>Trip Dispatcher</strong></div><nav class="menu"><a href="./dashboard.html">Dashboard</a><a href="./vehicles.html">Vehicle Registry</a><a class="active" href="./dispatch.html">Trip Dispatch</a><a href="./maintenance.html">Maintenance</a><a href="./expenses.html">Fuel & Expenses</a><a href="./drivers.html">Driver Safety</a><a href="./analytics.html">Analytics</a><a href="./reports.html">Reports</a></nav><div class="nav-footer"><button class="btn btn-muted js-logout">Logout</button></div></aside>
+      <section class="content">
+        <section class="hero"><h1>Dispatch Workflow</h1><p>Draft trips, validate capacity and compliance, and dispatch from a live availability pool.</p></section>
+        <section class="panel">
+          <h3>Create Draft Trip</h3>
+          <form id="tripDraftForm" class="grid-3">
+            <label>Vehicle ID<input id="dVehicle" required placeholder="veh-001" /></label>
+            <label>Driver ID<input id="dDriver" required placeholder="drv-001" /></label>
+            <label>Cargo Weight Kg<input id="dWeight" type="number" min="0" required value="100" /></label>
+            <label>Origin<input id="dOrigin" required placeholder="Los Angeles, CA" /></label>
+            <label>Destination<input id="dDest" required placeholder="San Diego, CA" /></label>
+            <label>Schedule<input id="dWhen" type="datetime-local" required /></label>
+            <div class="row" style="align-items:end;"><button class="btn" type="submit">Create Draft</button></div>
+          </form>
+        </section>
+        <section class="grid-2">
+          <article class="panel"><h3>Available Vehicles</h3><div id="poolVehicles" class="table-wrap"></div></article>
+          <article class="panel"><h3>Assignable Drivers</h3><div id="poolDrivers" class="table-wrap"></div></article>
+        </section>
+        <section class="panel"><h3>Trip Queue</h3><div id="dispatchTrips" class="table-wrap"></div></section>
+        <p id="dispatchMsg" class="msg"></p>
+      </section>
+    </main>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

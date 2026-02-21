@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" /><meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FleetFlow | Analytics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body data-page="analytics">
+    <main class="shell">
+      <aside class="nav"><div class="brand"><small>Page 8</small><strong>Analytics</strong></div><nav class="menu"><a href="./dashboard.html">Dashboard</a><a href="./vehicles.html">Vehicle Registry</a><a href="./dispatch.html">Trip Dispatch</a><a href="./maintenance.html">Maintenance</a><a href="./expenses.html">Fuel & Expenses</a><a href="./drivers.html">Driver Safety</a><a class="active" href="./analytics.html">Analytics</a><a href="./reports.html">Reports</a></nav><div class="nav-footer"><button class="btn btn-muted js-logout">Logout</button></div></aside>
+      <section class="content">
+        <section id="analyticsKpis" class="grid-4"></section>
+        <section class="panel"><h3>Financial Performance by Vehicle</h3><div id="financeTable" class="table-wrap"></div></section>
+        <p id="analyticsMsg" class="msg"></p>
+      </section>
+    </main>
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

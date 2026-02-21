@@ -25,26 +25,6 @@ Koa + Bun TypeScript backend with authentication, middleware stack, and demo fle
 bun install
 ```
 
-2. Create environment file:
-
-```bash
-cp .env.example .env
-```
-
-3. Fill required secrets in `.env`:
-- `SUPABASE_URL`
-- `SUPABASE_ANON_KEY`
-- `SUPABASE_SERVICE_KEY`
-- `DATABASE_URL`
-- `JWT_SECRET`
-- `SESSION_KEY`
-
-4. Start Redis (if local):
-
-```bash
-redis-server
-```
-
 ## Run
 
 Development mode (hot reload):

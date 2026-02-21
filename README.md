@@ -2,18 +2,6 @@
 
 Koa + Bun TypeScript backend with authentication, middleware stack, and demo fleet routes.
 
-## Project Structure
-
-- `src/server.ts`: application entrypoint
-- `src/config/*`: environment config, logger, Redis clients
-- `src/middleware/*`: 13-layer middleware onion and auth helpers
-- `src/router/*`: API routes (`vehicles`, `drivers`, `trips`)
-- `src/types/index.ts`: shared TypeScript types
-- `db/schema.ts`: Drizzle schema definitions
-- `db/config.ts`: DB config for Drizzle
-- `db/migrations/`: generated SQL migrations
-- `docs/`: static frontend files (GitHub Pages compatible)
-
 ## Prerequisites
 
 - Bun 1.1+
@@ -117,6 +105,18 @@ Use returned bearer token for protected routes:
 curl http://localhost:3001/api/vehicles \
   -H "Authorization: Bearer <TOKEN>"
 ```
+
+## Project Structure
+
+- `src/server.ts`: application entrypoint
+- `src/config/*`: environment config, logger, Redis clients
+- `src/middleware/*`: 13-layer middleware onion and auth helpers
+- `src/router/*`: API routes (`vehicles`, `drivers`, `trips`)
+- `src/types/index.ts`: shared TypeScript types
+- `db/schema.ts`: Drizzle schema definitions
+- `db/config.ts`: DB config for Drizzle
+- `db/migrations/`: generated SQL migrations
+- `docs/`: static frontend files (GitHub Pages compatible)
 
 
 bun run dev

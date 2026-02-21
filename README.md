@@ -105,9 +105,3 @@ curl http://localhost:3001/api/vehicles \
 - `db/migrations/`: generated SQL migrations
 - `docs/`: static frontend files (GitHub Pages compatible)
 
-
-bun run dev
-```
-2. Open in browser:
-- `http://localhost:3001/`
-

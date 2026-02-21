@@ -91,7 +91,5 @@ bun run dev
 2. Open in browser:
 - `http://localhost:3001/`
 
-## Notes
 
-- Router data is currently in-memory for readiness and local testing.
-- Redis connection failures are handled gracefully at startup, but sessions/rate limits degrade without Redis.
+

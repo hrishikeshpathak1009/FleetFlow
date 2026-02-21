@@ -1,4 +1,4 @@
-# FleetFlow Backend
+# FleetFlow 
 
 Koa + Bun TypeScript backend with authentication, middleware stack, and demo fleet routes.
 
@@ -118,21 +118,7 @@ curl http://localhost:3001/api/vehicles \
   -H "Authorization: Bearer <TOKEN>"
 ```
 
-## Frontend
 
-The frontend is a static dashboard served by Koa from `docs/`.
-
-Features:
-- Login screen for demo users
-- KPI cards for fleet metrics
-- Vehicles, drivers, and trips tables
-- Create vehicle and create trip actions
-- Trip dispatch/complete/cancel actions
-
-Run and open:
-
-1. Start server:
-```bash
 bun run dev
 ```
 2. Open in browser:

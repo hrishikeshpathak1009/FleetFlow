@@ -1,3 +1,5 @@
+const API_BASE = "http://localhost:3001";
+
 const state = {
   token: localStorage.getItem("ff_token") || "",
   user: JSON.parse(localStorage.getItem("ff_user") || "null"),
@@ -35,7 +37,10 @@ async function api(path, options = {}) {
   const headers = { "Content-Type": "application/json", ...(options.headers || {}) };
   if (state.token) headers.Authorization = `Bearer ${state.token}`;
 
-  const res = await fetch(path, { ...options, headers });
+  const res = await fetch(`${API_BASE}${path}`, {
+    ...options,
+    headers,
+  });
   const data = await res.json().catch(() => ({}));
 
   if (!res.ok) {
@@ -139,10 +144,10 @@ async function loadDashboard() {
         t.status === "planned"
           ? `<button class="btn btn-ghost js-trip" data-op="dispatch" data-id="${t.id}">Dispatch</button>`
           : t.status === "dispatched"
-          ? `<button class="btn btn-ghost js-trip" data-op="complete" data-id="${t.id}">Complete</button>`
-          : t.status !== "completed"
-          ? `<button class="btn btn-ghost js-trip" data-op="cancel" data-id="${t.id}">Cancel</button>`
-          : "-",
+            ? `<button class="btn btn-ghost js-trip" data-op="complete" data-id="${t.id}">Complete</button>`
+            : t.status !== "completed"
+              ? `<button class="btn btn-ghost js-trip" data-op="cancel" data-id="${t.id}">Cancel</button>`
+              : "-",
       ])
     );
 

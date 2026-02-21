@@ -9,26 +9,31 @@
 //   – credentials: true  →  cookies & auth headers forwarded
 // ─────────────────────────────────────────────────────────────
 
+// src/middleware/07.cors.ts
 import cors from "@koa/cors";
 import { config } from "../config/index.ts";
 
 export const corsMiddleware = () =>
   cors({
-    // Origin whitelist — return the matched origin or block the request
     origin: (ctx) => {
-      const incoming = ctx.request.headers.origin ?? "";
-      return config.cors.origins.includes(incoming)
-        ? incoming
-        : config.cors.origins[0]; // fallback to first allowed origin
+      const incoming = ctx.request.headers.origin;
+
+      // Allow non-browser tools (curl, Postman)
+      if (!incoming) return "*";
+
+      // Allow whitelisted browser origins
+      if (config.cors.origins.includes(incoming)) {
+        return incoming;
+      }
+
+      // Explicitly block others
+      return false;
     },
 
-    // Allow cookies / Authorization headers to be forwarded
     credentials: true,
 
-    // HTTP methods the browser is allowed to use
     allowMethods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
 
-    // Headers clients are allowed to send
     allowHeaders: [
       "Content-Type",
       "Authorization",
@@ -36,7 +41,6 @@ export const corsMiddleware = () =>
       "X-Requested-With",
     ],
 
-    // Headers exposed to JavaScript in the browser
     exposeHeaders: [
       "X-Request-ID",
       "X-Response-Time",
@@ -45,6 +49,5 @@ export const corsMiddleware = () =>
       "X-RateLimit-Reset",
     ],
 
-    // Cache preflight response for 24 hours
     maxAge: 86_400,
   });

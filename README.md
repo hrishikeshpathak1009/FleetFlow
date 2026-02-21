@@ -138,23 +138,3 @@ bun run dev
 2. Open in browser:
 - `http://localhost:3001/`
 
-For GitHub Pages deployment, publish the `docs/` folder.  
-If API is hosted elsewhere, set a global base URL before loading `app.js`:
-
-```html
-<script>window.FLEETFLOW_API_BASE = "https://your-api-host.com";</script>
-```
-
-## Business Logic Endpoints
-
-- `GET /api/dispatch/available`
-- `GET /api/analytics/dashboard`
-- `GET /api/analytics/finance`
-- `GET /api/expenses`
-- `POST /api/trips/:id/fuel-log`
-
-## Notes
-
-- Business data is now persisted in Postgres via Drizzle (no in-memory router state).
-- App startup seeds baseline demo vehicle/driver/trip records when DB is empty.
-- Redis connection failures are handled gracefully at startup, but sessions/rate-limits degrade without Redis.

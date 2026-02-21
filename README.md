@@ -81,16 +81,6 @@ curl http://localhost:3001/api/vehicles \
   -H "Authorization: Bearer <TOKEN>"
 ```
 
-## Frontend
-
-The frontend is a static dashboard served by Koa from `public/`.
-
-Features:
-- Login screen for demo users
-- KPI cards for fleet metrics
-- Vehicles, drivers, and trips tables
-- Create vehicle and create trip actions
-- Trip dispatch/complete/cancel actions
 
 Run and open:
 

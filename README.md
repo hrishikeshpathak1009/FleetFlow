@@ -24,6 +24,10 @@ Koa + Bun TypeScript backend with authentication, middleware stack, and demo fle
 ```bash
 bun install
 ```
+2. Start Redis (if local):
+
+```bash
+redis-server
 
 ## Run
 
